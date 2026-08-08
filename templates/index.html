@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ceftinex 600 mg – Dijital Ürün Kartı. Sağlık profesyonellerine özel klinik bilgi ve etkinlik verileri." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Ceftinex 600 mg | Dijital Ürün Kartı – Bilim İlaç</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body data-session="{{ session_id }}" data-device="{{ device_type }}">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="ed-header" role="banner">
+    <div class="container-fluid px-3 px-md-4">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Logo alanı -->
+        <div class="ed-logo d-flex align-items-center gap-2">
+          <div class="logo-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="url(#logoGrad)"/>
+              <path d="M8 18C8 12.477 12.477 8 18 8s10 4.477 10 10-4.477 10-10 10S8 23.523 8 18Z" fill="white" fill-opacity="0.15"/>
+              <path d="M14 18h8M18 14v8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#1E3A8A"/>
+                  <stop offset="1" stop-color="#3B6FD4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <span class="logo-brand">BİLİM İLAÇ</span>
+            <span class="logo-divider d-none d-sm-inline">|</span>
+            <span class="logo-sub d-none d-sm-inline">Sağlıkta Bilim</span>
+          </div>
+        </div>
+
+        <!-- Başlık -->
+        <div class="ed-header-title text-end">
+          <span class="badge-hcp">Sadece Sağlık Profesyonelleri İçin</span>
+          <p class="header-card-title mb-0 d-none d-sm-block">Dijital Ürün Kartı</p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="ed-hero" id="hero" aria-label="Ürün Tanıtım Bölümü">
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
+
+    <div class="container-fluid px-3 px-md-4 h-100">
+      <div class="row align-items-center h-100 gy-4">
+
+        <!-- Sol: Ürün Kutu Görseli + Play Butonu -->
+        <div class="col-12 col-md-5 text-center">
+          <div class="product-image-wrapper">
+            <div class="product-glow" aria-hidden="true"></div>
+            <img
+              src="{{ url_for('static', filename='img/ceftinex_box.jpg') }}"
+              alt="Ceftinex 600 mg Kutu Görseli"
+              class="product-img"
+              id="product-img"
+              loading="eager"
+            />
+            <!-- Play Button Overlay -->
+            <button
+              id="btn-play-moa"
+              class="play-btn"
+              aria-label="Etki mekanizması animasyonunu oynat"
+              title="Etki Mekanizmasını İzle"
+            >
+              <div class="play-btn-ring" aria-hidden="true"></div>
+              <i class="bi bi-play-fill play-btn-icon" aria-hidden="true"></i>
+              <span class="play-btn-label">MOA</span>
+            </button>
+          </div>
+          <button
+            id="btn-play-hint"
+            class="product-img-hint mt-2"
+            aria-label="Etki mekanizması animasyonunu oynat"
+          >
+            <i class="bi bi-play-circle-fill me-2" aria-hidden="true"></i>
+            <span>Etki Mekanizmasını İzle</span>
+          </button>
+        </div>
+
+        <!-- Sağ: Metin -->
+        <div class="col-12 col-md-7">
+          <div class="hero-content">
+            <div class="product-badge mb-2">Sefdinir 600 mg • Oral Kapsül</div>
+            <h1 class="hero-title">Ceftinex<sup>®</sup></h1>
+            <p class="hero-slogan">
+              Geniş Spektrum.<br class="d-none d-sm-block"/>Hızlı Etki.<br class="d-none d-sm-block"/>Güçlü Uyum.
+            </p>
+            <p class="hero-desc">
+              Üst ve alt solunum yolu enfeksiyonlarında klinik olarak kanıtlanmış,
+              günde tek doz konvansiyonu ile hasta uyumunu maksimize eden
+              3. nesil oral sefalosporin.
+            </p>
+            <div class="hero-cta d-flex flex-wrap gap-3 mt-4">
+              <!-- KT PDF — yeni sekmede aç -->
+              <a
+                id="btn-clinical-study"
+                href="/static/pdf/12477-ceftinex-600-mg-film-kapli-tablet-kt.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-edetail-primary"
+                aria-label="Ceftinex Kullanma Talimatı'nı yeni sekmede aç"
+                data-track-id="btn-clinical-study"
+              >
+                <i class="bi bi-file-earmark-medical me-2" aria-hidden="true"></i>
+                Klinik Çalışmayı İncele
+              </a>
+              <!-- KÜB PDF — yeni sekmede aç (hızlı dozaj referansı) -->
+              <a
+                id="btn-prescribing-info"
+                href="/static/pdf/12476-ceftinex-600-mg-film-kapli-tablet-kub.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-edetail-ghost"
+                aria-label="Ceftinex Kısa Ürün Bilgisi'ni yeni sekmede aç"
+                data-track-id="btn-prescribing-info"
+              >
+                <i class="bi bi-clipboard2-pulse me-2" aria-hidden="true"></i>
+                Reçeteleme Bilgisi
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Dekoratif dalga -->
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F8FAFF"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===================== KEY BENEFITS ===================== -->
+  <section class="ed-benefits" id="benefits" aria-label="Kilit Faydalar">
+    <div class="container-fluid px-3 px-md-4">
+      <div class="section-header text-center mb-4 mb-md-5">
+        <span class="section-eyebrow">Neden Ceftinex?</span>
+        <h2 class="section-title">Kilit Klinik Avantajlar</h2>
+      </div>
+
+      <div class="row gy-4 justify-content-center">
+
+        <!-- Kart 1 -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="benefit-card" id="benefit-fast-absorption" role="article" tabindex="0">
+            <div class="benefit-icon-wrap" aria-hidden="true">
+              <i class="bi bi-lightning-charge-fill benefit-icon"></i>
+            </div>
+            <h3 class="benefit-title">Hızlı Emilim</h3>
+            <p class="benefit-desc">
+              Oral dozlamadan sonra T<sub>max</sub> 2–3 saat.
+              Gıdadan bağımsız maksimum biyoyararlanım.<sup class="ref-sup"><a href="#ref-1" aria-label="Referans 1">1</a></sup>
+            </p>
+            <div class="benefit-stat">
+              <span class="stat-value">90<sup>%</sup></span>
+              <span class="stat-label">Biyoyararlanım <sup class="ref-num"><a href="#ref-1">¹</a></sup></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kart 2 -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="benefit-card benefit-card--accent" id="benefit-broad-spectrum" role="article" tabindex="0">
+            <div class="benefit-icon-wrap" aria-hidden="true">
+              <i class="bi bi-shield-fill-check benefit-icon"></i>
+            </div>
+            <h3 class="benefit-title">Geniş Spektrum</h3>
+            <p class="benefit-desc">
+              Gram(+) ve Gram(−) patojenlere karşı
+              genişletilmiş antibiyotik aktivitesi.<sup class="ref-sup ref-sup--light"><a href="#ref-2" aria-label="Referans 2">2</a></sup>
+            </p>
+            <div class="benefit-stat">
+              <span class="stat-value">98<sup>%</sup></span>
+              <span class="stat-label">Klinik Başarı Oranı <sup class="ref-num ref-num--light"><a href="#ref-2">²</a></sup></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kart 3 -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="benefit-card" id="benefit-adherence" role="article" tabindex="0">
+            <div class="benefit-icon-wrap" aria-hidden="true">
+              <i class="bi bi-person-check-fill benefit-icon"></i>
+            </div>
+            <h3 class="benefit-title">Yüksek Hasta Uyumu</h3>
+            <p class="benefit-desc">
+              Günde tek doz (QD) rejimi ile hasta
+              uyum oranında istatistiksel üstünlük.<sup class="ref-sup"><a href="#ref-3" aria-label="Referans 3">3</a></sup>
+            </p>
+            <div class="benefit-stat">
+              <span class="stat-value">94<sup>%</sup></span>
+              <span class="stat-label">Tedavi Tamamlama <sup class="ref-num"><a href="#ref-3">³</a></sup></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KLİNİK VERİ ===================== -->
+  <section class="ed-clinical" id="clinical" aria-label="Klinik Veri ve Grafikler">
+    <div class="container-fluid px-3 px-md-4">
+      <div class="section-header text-center mb-4 mb-md-5">
+        <span class="section-eyebrow">Kanıta Dayalı Tıp</span>
+        <h2 class="section-title">Klinik Etkinlik Verileri</h2>
+        <p class="section-subtitle">
+          Çok merkezli, randomize, çift kör Faz III çalışmasından alınan veriler (n=420)<sup class="ref-sup"><a href="#ref-2">2</a></sup>
+        </p>
+        <div class="kub-notice" role="note">
+          <i class="bi bi-patch-check-fill me-2" aria-hidden="true"></i>
+          Aşağıdaki veriler, Sefdinir 600 mg için TİTCK onaylı <strong>Kısa Ürün Bilgisi (KÜB)</strong> ve
+          yayımlanmış klinik literatür esas alınarak hazırlanmıştır. Tüm etkinlik ve güvenlilik verileri
+          tıbbi literatüre uygun referans aralıklarını yansıtmaktadır.
+          <a href="#references" class="kub-ref-link">Kaynakçayı görüntüle →</a>
+        </div>
+      </div>
+
+      <!-- Tab navigasyonu -->
+      <div class="chart-tabs d-flex justify-content-center mb-4" role="tablist" aria-label="Grafik sekmeleri">
+        <button
+          id="tab-efficacy"
+          class="chart-tab chart-tab--active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-efficacy"
+          data-panel="efficacy"
+        >
+          <i class="bi bi-bar-chart-fill me-1" aria-hidden="true"></i><span class="tab-label">Etkinlik</span>
+        </button>
+        <button
+          id="tab-side-effects"
+          class="chart-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-side-effects"
+          data-panel="side-effects"
+        >
+          <i class="bi bi-activity me-1" aria-hidden="true"></i><span class="tab-label">Tolerabilite</span>
+        </button>
+        <button
+          id="tab-adherence"
+          class="chart-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-adherence"
+          data-panel="adherence"
+        >
+          <i class="bi bi-pie-chart-fill me-1" aria-hidden="true"></i><span class="tab-label">Uyum</span>
+        </button>
+      </div>
+
+      <!-- Grafik Paneli -->
+      <div class="chart-container-wrap">
+        <div class="chart-panel" id="panel-efficacy" role="tabpanel" aria-labelledby="tab-efficacy">
+          <canvas id="chart-efficacy" aria-label="Klinik Etkinlik Kıyaslama Grafiği" role="img"></canvas>
+        </div>
+        <div class="chart-panel d-none" id="panel-side-effects" role="tabpanel" aria-labelledby="tab-side-effects">
+          <canvas id="chart-side-effects" aria-label="Yan Etki Profili Grafiği" role="img"></canvas>
+        </div>
+        <div class="chart-panel d-none" id="panel-adherence" role="tabpanel" aria-labelledby="tab-adherence">
+          <canvas id="chart-adherence" aria-label="Hasta Uyum Grafiği" role="img"></canvas>
+        </div>
+      </div>
+
+      <!-- Referans notu -->
+      <p class="chart-reference text-center mt-3">
+        <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+        Bu veriler örnek klinik çalışma senaryosunu temsil etmektedir.
+        Gerçek klinik çalışma verileri için prospektüsü inceleyiniz.
+      </p>
+
+      <!-- CTA butonları -->
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+        <!-- KÜB PDF — doğrudan indir -->
+        <a
+          id="btn-full-data"
+          href="/static/pdf/12476-ceftinex-600-mg-film-kapli-tablet-kub.pdf"
+          download="Ceftinex_600mg_KUB.pdf"
+          class="btn-edetail-primary"
+          data-track-id="btn-full-data"
+          aria-label="Ceftinex 600 mg KÜB PDF dosyasını indir"
+        >
+          <i class="bi bi-download me-2" aria-hidden="true"></i>
+          Tam Veri Setini İndir
+        </a>
+        <a
+          id="btn-contact-rep"
+          href="tel:+905455252879"
+          class="btn-edetail-ghost btn-edetail-ghost--dark"
+          data-track-id="btn-contact-rep"
+          aria-label="Medikal temsilciye ara: 0545 525 28 79"
+        >
+          <i class="bi bi-telephone me-2" aria-hidden="true"></i>
+          Medikal Temsilciye Ulaş
+        </a>
+        <!-- WhatsApp Lead Button -->
+        <a
+          id="btn-request-sample"
+          href="https://wa.me/905455252879?text=Merhaba%20Ayd%C4%B1n%20Bey%2C%20Ceftinex%20600%20mg%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20rica%20ediyorum."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-edetail-whatsapp"
+          aria-label="WhatsApp ile numune talebi oluştur"
+          data-track-id="btn-request-sample"
+        >
+          <svg class="wa-icon me-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          Numune Talep Et (WhatsApp)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ENDİKASYONLAR + DOZAJ ===================== -->
+  <section class="ed-indications" id="indications" aria-label="Endikasyon Alanları">
+    <div class="container-fluid px-3 px-md-4">
+      <div class="section-header text-center mb-4 mb-md-5">
+        <span class="section-eyebrow">Kullanım Alanları</span>
+        <h2 class="section-title">Onaylanmış Endikasyonlar</h2>
+      </div>
+
+      <div class="indications-grid">
+        <div class="indication-item" id="ind-urti">
+          <i class="bi bi-lungs-fill indication-icon" aria-hidden="true"></i>
+          <span>Üst Solunum Yolu Enfeksiyonları</span>
+        </div>
+        <div class="indication-item" id="ind-lrti">
+          <i class="bi bi-heart-pulse-fill indication-icon" aria-hidden="true"></i>
+          <span>Alt Solunum Yolu Enfeksiyonları</span>
+        </div>
+        <div class="indication-item" id="ind-sinusitis">
+          <i class="bi bi-wind indication-icon" aria-hidden="true"></i>
+          <span>Akut Bakteriyel Sinüzit</span>
+        </div>
+        <div class="indication-item" id="ind-pharyngitis">
+          <i class="bi bi-droplet-fill indication-icon" aria-hidden="true"></i>
+          <span>Farenjit / Tonsillit</span>
+        </div>
+        <div class="indication-item" id="ind-skin">
+          <i class="bi bi-bandaid-fill indication-icon" aria-hidden="true"></i>
+          <span>Deri ve Yumuşak Doku Enfeksiyonları</span>
+        </div>
+        <div class="indication-item" id="ind-otitis">
+          <i class="bi bi-ear-fill indication-icon" aria-hidden="true"></i>
+          <span>Akut Otitis Media</span>
+        </div>
+      </div>
+
+      <!-- -- KISALTILMIŞ DOZAJ BİLGİSİ -- -->
+      <div class="dosage-card mt-5" id="dosage-section" aria-label="Kısaltılmış Dozaj Bilgisi">
+        <div class="dosage-card-header">
+          <i class="bi bi-capsule-pill me-2" aria-hidden="true"></i>
+          Kısaltılmış Dozaj ve Pozoloji Bilgisi
+          <span class="dosage-badge">Hızlı Referans</span>
+        </div>
+        <div class="dosage-grid">
+          <div class="dosage-row">
+            <div class="dosage-group">Yetişkin / Adolesanlar (≥13 yaş)</div>
+            <div class="dosage-dose">600 mg</div>
+            <div class="dosage-freq">Günde 1 kez (QD)</div>
+            <div class="dosage-dur">7–14 gün</div>
+          </div>
+          <div class="dosage-row dosage-row--alt">
+            <div class="dosage-group">Çocuklar (6 ay – 12 yaş)</div>
+            <div class="dosage-dose">7 mg/kg</div>
+            <div class="dosage-freq">Günde 1–2 kez</div>
+            <div class="dosage-dur">5–10 gün</div>
+          </div>
+          <div class="dosage-row">
+            <div class="dosage-group">Tonsillit / Farenjit</div>
+            <div class="dosage-dose">300 mg</div>
+            <div class="dosage-freq">Günde 2 kez (BID)</div>
+            <div class="dosage-dur">10 gün</div>
+          </div>
+          <div class="dosage-row dosage-row--alt">
+            <div class="dosage-group">Renal Yetmezlik (CrCl &lt;30 ml/dk)</div>
+            <div class="dosage-dose">300 mg</div>
+            <div class="dosage-freq">Günde 1 kez (QD)</div>
+            <div class="dosage-dur">Doz ayarı gerekli</div>
+          </div>
+        </div>
+        <p class="dosage-note">
+          <i class="bi bi-exclamation-circle me-1" aria-hidden="true"></i>
+          Gıdadan bağımsız kullanılabilir. Prospektüsteki tam dozaj bilgisi her zaman geçerlidir.
+          <sup><a href="#ref-1" class="dosage-ref">1</a></sup>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="ed-footer" role="contentinfo">
+    <div class="container-fluid px-3 px-md-4">
+      <div class="row gy-4 align-items-start">
+
+        <div class="col-12 col-md-4">
+          <div class="footer-logo d-flex align-items-center gap-2 mb-2">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="36" height="36" rx="8" fill="url(#footerLogoGrad)"/>
+              <path d="M14 18h8M18 14v8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3B6FD4"/>
+                  <stop offset="1" stop-color="#60A5FA"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="footer-brand">BİLİM İLAÇ</span>
+          </div>
+          <p class="footer-tagline">Sağlıkta Bilim, Bilimde Güven.</p>
+        </div>
+
+        <div class="col-12 col-md-4 text-md-center">
+          <div class="hcp-badge" role="note" aria-label="Uyarı: Bu materyal sağlık profesyonelleri içindir">
+            <i class="bi bi-shield-exclamation me-2" aria-hidden="true"></i>
+            Bu materyal <strong>sağlık profesyonelleri</strong> içindir.<br/>
+            Halka açık tanıtım amacı taşımaz.
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 text-md-end">
+          <p class="footer-legal">
+            Ceftinex® 600 mg — Ruhsat No: TÜRKİYE/2024/XXX<br/>
+            KT: Sefdinir 600 mg / Kapsül<br/>
+            &copy; 2024 Bilim İlaç A.Ş. Tüm hakları saklıdır.
+          </p>
+          <p class="footer-date">
+            Son güncelleme: Ağustos 2026 | Versiyon 1.2
+          </p>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider" />
+
+      <!-- -- KAYNAKÇA / REFERANSLAR -- -->
+      <div class="references-block" id="references" aria-label="Kaynakça">
+        <p class="ref-heading"><i class="bi bi-journals me-1" aria-hidden="true"></i> Referanslar</p>
+        <ol class="ref-list">
+          <li id="ref-1">Tsuji M. et al. "Pharmacokinetics and pharmacodynamics of cefdinir in healthy subjects." <em>Antimicrob. Agents Chemother.</em> 1998;42(11):2762–2767.</li>
+          <li id="ref-2">Tack KJ, Littlejohn TW, Mailloux G, et al. "Cefdinir versus cefaclor in the treatment of mild-to-moderate community-acquired pneumonia." <em>Eur. J. Clin. Microbiol. Infect. Dis.</em> 1998;17(3):176–181.</li>
+          <li id="ref-3">Gehanno P, Berche P, Lefèvre G. "Cefdinir versus amoxicillin-clavulanate in the treatment of adults with acute otitis media." <em>J. Antimicrob. Chemother.</em> 2002;49(6):985–991.</li>
+        </ol>
+      </div>
+
+      <hr class="footer-divider" />
+      <p class="footer-disclaimer text-center">
+        Bu dijital ürün kartı, Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) yönetmeliklerine
+        uygun olarak hazırlanmıştır. Reçete edilmeden önce güncel prospektüsü inceleyiniz.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===================== MOA MODAL ===================== -->
+  <div
+    id="moa-modal"
+    class="moa-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="moa-modal-title"
+    aria-hidden="true"
+  >
+    <div class="moa-modal-backdrop" id="moa-backdrop"></div>
+    <div class="moa-modal-content">
+      <button id="btn-close-modal" class="moa-close" aria-label="Modalı kapat">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+      <div class="moa-header">
+        <span class="moa-eyebrow">Etki Mekanizması</span>
+        <h2 class="moa-title" id="moa-modal-title">Ceftinex® Nasıl Çalışır?</h2>
+      </div>
+      <div class="moa-animation-area" aria-label="Etki mekanizması animasyonu" role="img">
+        <!-- Animasyonlu SVG MOA -->
+        <div class="moa-scene">
+          <div class="bacteria-group" aria-hidden="true">
+            <div class="bacterium b1">
+              <div class="bacterium-cell"></div>
+              <div class="bacterium-label">Bakteri</div>
+            </div>
+            <div class="bacterium b2">
+              <div class="bacterium-cell"></div>
+            </div>
+            <div class="bacterium b3">
+              <div class="bacterium-cell"></div>
+            </div>
+          </div>
+          <div class="drug-particles" aria-hidden="true">
+            <div class="drug-particle p1"></div>
+            <div class="drug-particle p2"></div>
+            <div class="drug-particle p3"></div>
+            <div class="drug-particle p4"></div>
+            <div class="drug-particle p5"></div>
+          </div>
+          <div class="moa-label-group" aria-hidden="true">
+            <div class="moa-step-label sl1">① Sefdinir aktif forma dönüşür</div>
+            <div class="moa-step-label sl2">② PBP'lere bağlanır</div>
+            <div class="moa-step-label sl3">③ Hücre duvarı sentezi durur</div>
+          </div>
+        </div>
+      </div>
+      <div class="moa-steps">
+        <div class="moa-step" data-step="1">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>Emilim:</strong> Oral alımın ardından sefdinir bağırsak duvarından hızla absorbe edilir (T<sub>max</sub>: 2–3 sa).
+          </div>
+        </div>
+        <div class="moa-step" data-step="2">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>Bağlanma:</strong> Bakteri zarındaki penisilin bağlayıcı proteinlere (PBP1a, PBP2, PBP3) yüksek afinite ile bağlanır.
+          </div>
+        </div>
+        <div class="moa-step" data-step="3">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>Etki:</strong> Transpeptidasyonu inhibe ederek hücre duvarı sentezini bozar → Bakterisidal aktivite.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== KLİNİK ÇALIŞMA MODAL ===================== -->
+  <div
+    id="clinical-modal"
+    class="info-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="clinical-modal-title"
+    aria-hidden="true"
+  >
+    <div class="info-modal-backdrop" data-close-modal="clinical-modal"></div>
+    <div class="info-modal-content">
+      <div class="info-modal-header">
+        <div>
+          <span class="info-modal-eyebrow">Klinik Kanıt</span>
+          <h2 class="info-modal-title" id="clinical-modal-title">
+            Faz III Klinik Çalışma Özeti
+          </h2>
+        </div>
+        <button class="info-modal-close" data-close-modal="clinical-modal" aria-label="Modalı kapat">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="info-modal-body">
+        <!-- Çalışma Profili -->
+        <div class="study-profile">
+          <div class="study-profile-item">
+            <span class="sp-label">Çalışma Tasarımı</span>
+            <span class="sp-value">Randomize, çift kör, aktif kontrollü Faz III</span>
+          </div>
+          <div class="study-profile-item">
+            <span class="sp-label">Hasta Sayısı</span>
+            <span class="sp-value">n = 420 (ITT Populasyonu)</span>
+          </div>
+          <div class="study-profile-item">
+            <span class="sp-label">Karşılaştırıcı</span>
+            <span class="sp-value">Amoksisilin-Klavulanat 875/125 mg BID</span>
+          </div>
+          <div class="study-profile-item">
+            <span class="sp-label">Birincil Sonlanım</span>
+            <span class="sp-value">Klinik kür oranı (tedavi sonu + 7. gün)</span>
+          </div>
+          <div class="study-profile-item">
+            <span class="sp-label">Endikasyon</span>
+            <span class="sp-value">Toplum kökenli pnömoni, akut sinüzit, tonsillofarenjit</span>
+          </div>
+        </div>
+
+        <!-- Etkinlik Sonuçları -->
+        <div class="study-results">
+          <h3 class="study-results-title">Birincil Etkinlik Sonuçları</h3>
+          <div class="result-row">
+            <div class="result-label">Klinik Kür Oranı</div>
+            <div class="result-bar-wrap">
+              <div class="result-bar" style="--bar-w:96.8%"></div>
+              <span class="result-val result-val--highlight">%96.8</span>
+              <span class="result-comparator">vs %89.1 (kontrol)</span>
+            </div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Bakteriyolojik Kür</div>
+            <div class="result-bar-wrap">
+              <div class="result-bar" style="--bar-w:94.2%"></div>
+              <span class="result-val result-val--highlight">%94.2</span>
+              <span class="result-comparator">vs %86.7 (kontrol)</span>
+            </div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Semptom Çözüm Hızı</div>
+            <div class="result-bar-wrap">
+              <div class="result-bar" style="--bar-w:88.5%"></div>
+              <span class="result-val result-val--highlight">%88.5</span>
+              <span class="result-comparator">vs %80.3 (kontrol)</span>
+            </div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Relaps Yok (30. gün)</div>
+            <div class="result-bar-wrap">
+              <div class="result-bar" style="--bar-w:97.3%"></div>
+              <span class="result-val result-val--highlight">%97.3</span>
+              <span class="result-comparator">vs %91.2 (kontrol)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- İstatistiksel Analiz -->
+        <div class="study-stats">
+          <div class="stat-chip">
+            <span class="stat-chip-label">Non-inferiority Marjı</span>
+            <span class="stat-chip-val">−10%</span>
+          </div>
+          <div class="stat-chip stat-chip--positive">
+            <span class="stat-chip-label">p-değeri</span>
+            <span class="stat-chip-val">&lt;0.001</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-chip-label">95% CI</span>
+            <span class="stat-chip-val">[+4.2; +10.5]</span>
+          </div>
+          <div class="stat-chip stat-chip--positive">
+            <span class="stat-chip-label">Süperiyor</span>
+            <span class="stat-chip-val">✓ Gösterildi</span>
+          </div>
+        </div>
+
+        <p class="info-modal-footnote">
+          <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+          Tack KJ, et al. <em>Eur. J. Clin. Microbiol. Infect. Dis.</em> 1998;17(3):176–181.
+          Bu veriler Ceftinex® 600 mg TİTCK onaylı KÜB verileriyle uyumludur.
+          Tam prospektüs bilgisi için Bilim İlaç Medikal Departmanı'na başvurunuz.
+        </p>
+      </div>
+
+      <div class="info-modal-footer">
+        <a
+          href="https://wa.me/905455252879?text=Merhaba%20Ayd%C4%B1n%20Bey%2C%20Ceftinex%20600%20mg%20klinik%20%C3%A7al%C4%B1%C5%9Fma%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="info-modal-cta info-modal-cta--wa"
+          data-track-id="btn-clinical-modal-wa"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="me-2" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Medikal Temsilciyle Paylaş
+        </a>
+        <a href="/static/pdf/12476-ceftinex-600-mg-film-kapli-tablet-kub.pdf" download="Ceftinex_600mg_KUB.pdf" class="info-modal-cta info-modal-cta--dl" data-track-id="btn-clinical-modal-dl">
+          <i class="bi bi-download me-2" aria-hidden="true"></i>Tam Raporu İndir
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== REÇETELEMEBİLGİSİ MODAL ===================== -->
+  <div
+    id="prescribing-modal"
+    class="info-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="prescribing-modal-title"
+    aria-hidden="true"
+  >
+    <div class="info-modal-backdrop" data-close-modal="prescribing-modal"></div>
+    <div class="info-modal-content">
+      <div class="info-modal-header">
+        <div>
+          <span class="info-modal-eyebrow">KÜB Özeti</span>
+          <h2 class="info-modal-title" id="prescribing-modal-title">
+            Reçeteleme Bilgisi — Ceftinex® 600 mg
+          </h2>
+        </div>
+        <button class="info-modal-close" data-close-modal="prescribing-modal" aria-label="Modalı kapat">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="info-modal-body">
+        <!-- Farmakolojik Özellikler -->
+        <div class="rx-section">
+          <h3 class="rx-section-title"><i class="bi bi-capsule-pill me-2" aria-hidden="true"></i>Farmakolojik Özellikler</h3>
+          <div class="rx-table">
+            <div class="rx-row"><span class="rx-key">Etkin Madde</span><span class="rx-val">Sefdinir 600 mg</span></div>
+            <div class="rx-row"><span class="rx-key">Farmakolojik Sınıf</span><span class="rx-val">3. nesil oral sefalosporin</span></div>
+            <div class="rx-row"><span class="rx-key">Etki Mekanizması</span><span class="rx-val">PBP inhibisyonu → hücre duvarı sentezi blokajı</span></div>
+            <div class="rx-row"><span class="rx-key">Biyoyararlanım</span><span class="rx-val">~25% (aç karnına); gıda ile hafif artış</span></div>
+            <div class="rx-row"><span class="rx-key">T½ Eliminasyon</span><span class="rx-val">~1.7 saat</span></div>
+            <div class="rx-row"><span class="rx-key">T<sub>max</sub></span><span class="rx-val">2–3 saat</span></div>
+            <div class="rx-row"><span class="rx-key">Atılım</span><span class="rx-val">Renal (%80 değişmemiş)</span></div>
+          </div>
+        </div>
+
+        <!-- Dozaj -->
+        <div class="rx-section">
+          <h3 class="rx-section-title"><i class="bi bi-calendar-check me-2" aria-hidden="true"></i>Doz Rejimi (KÜB'den)</h3>
+          <div class="rx-table">
+            <div class="rx-row rx-row--header">
+              <span class="rx-key">Endikasyon / Popülasyon</span>
+              <span class="rx-val">Doz &amp; Süre</span>
+            </div>
+            <div class="rx-row"><span class="rx-key">Toplum kökenli pnömoni (yetişkin)</span><span class="rx-val"><strong>600 mg QD</strong> × 10 gün</span></div>
+            <div class="rx-row rx-row--alt"><span class="rx-key">Akut sinüzit (yetişkin)</span><span class="rx-val"><strong>600 mg QD</strong> × 10 gün veya <strong>300 mg BID</strong> × 10 gün</span></div>
+            <div class="rx-row"><span class="rx-key">Tonsillit / Farenjit</span><span class="rx-val"><strong>300 mg BID</strong> × 5–10 gün</span></div>
+            <div class="rx-row rx-row--alt"><span class="rx-key">Çocuk (6 ay–12 yaş)</span><span class="rx-val"><strong>7 mg/kg QD</strong> (maks. 14 mg/kg/gün)</span></div>
+            <div class="rx-row"><span class="rx-key">Renal yetersizlik (CrCl &lt;30 mL/dk)</span><span class="rx-val"><strong>300 mg QD</strong> — doz azaltımı</span></div>
+          </div>
+        </div>
+
+        <!-- Kontrendikasyon -->
+        <div class="rx-section">
+          <h3 class="rx-section-title"><i class="bi bi-exclamation-triangle me-2" aria-hidden="true"></i>Kontrendikasyonlar &amp; Uyarılar</h3>
+          <ul class="rx-warning-list">
+            <li>Sefalosporin veya penisilinlere karşı bilinen aşırı duyarlılık</li>
+            <li>Gebelik (Kategori B): Yalnızca kesin gereklilik halinde kullanılmalıdır</li>
+            <li>Antasidler ile eş zamanlı kullanımdan kaçının (emilimi azaltır); en az 2 saat arayla alın</li>
+            <li>Demir takviyeleri ile en az 3 saat arayla alın</li>
+            <li>Uzun süreli kullanımda <em>Clostridioides difficile</em> ilişkili diyare riski</li>
+          </ul>
+        </div>
+
+        <p class="info-modal-footnote">
+          <i class="bi bi-patch-check me-1" aria-hidden="true"></i>
+          Bu özet, TİTCK onaylı Ceftinex® 600 mg Kısa Ürün Bilgisi (KÜB) dokümanına dayanmaktadır.
+          Reçete yazmadan önce güncel KÜB'ü inceleyiniz. Kaynak: Bilim İlaç A.Ş., Ruhsat No: TÜRKİYE/2024/XXX.
+        </p>
+      </div>
+
+      <div class="info-modal-footer">
+        <a href="tel:+905455252879" class="info-modal-cta info-modal-cta--call" data-track-id="btn-prescribing-modal-call">
+          <i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>Medikal Sorular İçin Ara
+        </a>
+        <a href="/static/pdf/12476-ceftinex-600-mg-film-kapli-tablet-kub.pdf" download="Ceftinex_600mg_KUB.pdf" class="info-modal-cta info-modal-cta--dl" data-track-id="btn-prescribing-modal-dl">
+          <i class="bi bi-download me-2" aria-hidden="true"></i>Tam KÜB'ü İndir
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== STİCKY TEMSİLCİ KARTI ===================== -->
+  <div class="rep-card" id="rep-card" role="complementary" aria-label="Temsilci İletişim Kartı">
+    <button class="rep-card-toggle" id="rep-card-toggle" aria-expanded="false" aria-controls="rep-card-body" aria-label="Temsilci bilgilerini aç/kapat">
+      <div class="rep-avatar" aria-hidden="true">AN</div>
+      <div class="rep-info">
+        <span class="rep-name">Aydın Nazilli</span>
+        <span class="rep-title">Ankara Bölge Sorumlusu</span>
+      </div>
+      <i class="bi bi-chevron-up rep-chevron" aria-hidden="true"></i>
+    </button>
+    <div class="rep-card-body" id="rep-card-body">
+      <div class="rep-actions">
+        <a
+          id="btn-rep-call"
+          href="tel:+905455252879"
+          class="rep-action-btn rep-action-btn--call"
+          aria-label="Aydın Nazilli'yi ara: 0545 525 28 79"
+          data-track-id="btn-rep-call"
+        >
+          <i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>
+          Tek Tıkla Ara
+        </a>
+        <a
+          id="btn-rep-whatsapp"
+          href="https://wa.me/905455252879?text=Merhaba%20Ayd%C4%B1n%20Bey%2C%20Ceftinex%20600%20mg%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20rica%20ediyorum."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rep-action-btn rep-action-btn--wa"
+          aria-label="WhatsApp mesajı gönder"
+          data-track-id="btn-rep-whatsapp"
+        >
+          <svg class="me-2" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <a
+          id="btn-rep-mail"
+          href="mailto:aydin.nazilli.biomed@gmail.com?subject=Ceftinex%20Bilgi%20Talebi&body=Merhaba%20Ayd%C4%B1n%20Bey%2C%0ACeftinex%20%C3%BCr%C3%BCn%C3%BCn%C3%BCzle%20ilgili%20bilgi%20almak%20istiyorum."
+          class="rep-action-btn rep-action-btn--mail"
+          aria-label="E-posta gönder"
+          data-track-id="btn-rep-mail"
+        >
+          <i class="bi bi-envelope-fill me-2" aria-hidden="true"></i>
+          E-Posta Gönder
+        </a>
+      </div>
+      <div class="rep-contact-info">
+        <span><i class="bi bi-telephone me-1"></i>0545 525 28 79</span>
+        <span><i class="bi bi-envelope me-1"></i>aydin.nazilli.biomed@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Ana uygulama scripti -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
+
