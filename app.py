@@ -40,8 +40,12 @@ def close_db(exc=None):
         db.close()
 
 
-def init_db():
-    """Tablolar yoksa oluştur."""
+def init_db() -> None:
+    """
+    Veritabanı ve tabloları yoksa oluştur.
+    Her ortamda (WSGI import veya doğrudan çalışma) güvenle çağrılabilir;
+    tablolar zaten varsa CREATE TABLE IF NOT EXISTS sayesinde dokunulmaz.
+    """
     db = sqlite3.connect(DB_PATH)
     cursor = db.cursor()
 
@@ -70,6 +74,7 @@ def init_db():
 
     db.commit()
     db.close()
+    print(f"[DB] Veritabanı hazır: {DB_PATH}")
 
 
 # ---------------------------------------------------------------------------
@@ -215,8 +220,15 @@ def serve_static_file(filename):
 
 
 # ---------------------------------------------------------------------------
-# Başlatma
+# Veritabanı başlatma  —  hem WSGI import hem de doğrudan çalışmada tetiklenir
+# ---------------------------------------------------------------------------
+with app.app_context():
+    init_db()
+
+
+# ---------------------------------------------------------------------------
+# Geliştirme sunucusu  —  yalnızca 'python app.py' ile çalıştırıldığında aktif
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    init_db()
+    print("[DEV] Geliştirme sunucusu başlatılıyor: http://0.0.0.0:5000")
     app.run(debug=True, host="0.0.0.0", port=5000)
